@@ -105,6 +105,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    @apply bg-background text-foreground antialiased;
   }
 }

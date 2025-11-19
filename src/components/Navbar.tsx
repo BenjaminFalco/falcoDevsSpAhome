@@ -1,9 +1,20 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import logo from "@/assets/falcodevs-logo.png";
+import { useEffect, useState } from "react";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useTheme } from "@/hooks/useTheme";
+
+const falcodevsLogo =
+  "https://falcodevs.blob.core.windows.net/falcodevs-images/falcodevs-logo-DaBz84rS.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    const handleResize = () => setIsOpen(false);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -14,68 +25,84 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="FalcoDevs" className="h-10 w-10" />
-            <span className="text-xl font-bold text-foreground">
-              FalcoDevs
-            </span>
+            <img src={falcodevsLogo} alt="FalcoDevs" className="h-10 w-10 object-contain" />
+            <span className="text-xl font-semibold tracking-tight">FalcoDevs</span>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10 text-sm font-medium">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground transition-colors hover:text-primary"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection("servicios")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground transition-colors hover:text-primary"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection("contacto")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground transition-colors hover:text-primary"
             >
               Contacto
             </button>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Cambiar tema"
+              onClick={toggleTheme}
+              className="rounded-full border border-border/60 bg-card hover:border-primary/50"
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-foreground hover:text-primary transition-colors"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Cambiar tema"
+              onClick={toggleTheme}
+              className="rounded-full border border-border/60 bg-card hover:border-primary/50"
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-foreground transition-colors hover:text-primary"
+              aria-label="Abrir menú"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-4">
+          <div className="md:hidden pb-6 space-y-4 animate-in slide-in-from-top-2">
             <button
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setIsOpen(false);
               }}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
+              className="block w-full text-left rounded-lg border border-border bg-card px-4 py-3 text-foreground shadow-soft hover:border-primary/50 hover:shadow-strong"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection("servicios")}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
+              className="block w-full text-left rounded-lg border border-border bg-card px-4 py-3 text-foreground shadow-soft hover:border-primary/50 hover:shadow-strong"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection("contacto")}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
+              className="block w-full text-left rounded-lg border border-border bg-card px-4 py-3 text-foreground shadow-soft hover:border-primary/50 hover:shadow-strong"
             >
               Contacto
             </button>
