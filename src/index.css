@@ -5,114 +5,131 @@
 /* definicion del diseño del sistema de colores */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    /* 🌞 MODO CLARO */
+    --background: 210 40% 98%;        /* gris azulado muy claro */
+    --foreground: 222 47% 11%;        /* casi negro azulado */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 222 47% 11%;
 
-    /* 🔵 Azul corporativo oscuro (modo claro) */
-    --primary: 211 80% 38%;
+    /* 💠 Primario: teal moderno */
+    --primary: 188 90% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 20%;
+    /* Gris oscuro para tags / chips */
+    --secondary: 220 15% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
+    /* Muted gris suave */
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 15% 45%;
 
-    /* Acento igualado al azul */
-    --accent: 211 80% 38%;
+    /* 🌈 Acento violeta-azul para detalles */
+    --accent: 262 83% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
+    --border: 210 18% 90%;
+    --input: 210 18% 90%;
 
-    /* Ring igualado */
-    --ring: 211 80% 38%;
+    --ring: 188 90% 45%;
 
     --radius: 0.5rem;
     
-    /* Gradiente corregido */
+    /* Gradiente hero suave pero moderno */
     --gradient-hero: linear-gradient(
       135deg,
-      hsl(211 80% 38%),
-      hsl(200 80% 30%)
+      hsl(222 47% 11%),
+      hsl(210 40% 12%)
     );
 
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
-    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.15);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient-section: linear-gradient(
+      180deg,
+      hsl(210 40% 98%),
+      hsl(210 40% 96%)
+    );
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 211 80% 38%;
+    --shadow-soft: 0 2px 8px rgba(15, 23, 42, 0.12);
+    --shadow-strong: 0 18px 45px rgba(15, 23, 42, 0.35);
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Sidebar en modo claro */
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 188 90% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 210 18% 90%;
+    --sidebar-ring: 188 90% 45%;
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 95%;
+  --background: 222 47% 6%;        /* slate casi negro, elegante */
+  --foreground: 215 20% 92%;       /* gris claro suave (no blanco) */
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 95%;
+  --card: 222 47% 10%;
+  --card-foreground: 215 20% 92%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 95%;
+  --popover: 222 47% 10%;
+  --popover-foreground: 215 20% 92%;
 
-    /* 🔵 Azul oscuro uniforme en modo oscuro */
-    --primary: 211 80% 38%;
-    --primary-foreground: 0 0% 100%;
+  /* 💠 Primario teal profundo (NO celeste) */
+  --primary: 188 85% 45%;
+  --primary-foreground: 215 20% 96%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 95%;
+  /* Gris grafito para elementos secundarios */
+  --secondary: 222 25% 16%;
+  --secondary-foreground: 215 20% 90%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 60%;
+  /* Muted gris elegante */
+  --muted: 222 25% 14%;
+  --muted-foreground: 215 15% 65%;
 
-    --accent: 211 80% 38%;
-    --accent-foreground: 0 0% 100%;
+  /* Acento púrpura suave (para detalles premium) */
+  --accent: 262 70% 60%;
+  --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+  --destructive: 0 72% 55%;
+  --destructive-foreground: 215 20% 96%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+  --border: 222 25% 20%;
+  --input: 222 25% 20%;
+  --ring: 188 85% 45%;  /* teal profundo */
 
-    /* Ring igualado también */
-    --ring: 211 80% 38%;
-    
-    /* Gradientes corregidos */
-    --gradient-hero: linear-gradient(
-      135deg,
-      hsl(211 80% 38%),
-      hsl(200 80% 30%)
-    );
+  /* 🌌 Gradiente hero elegante (sin celeste) */
+  --gradient-hero: linear-gradient(
+    135deg,
+    hsl(222 47% 6%),
+    hsl(210 40% 12%)
+  );
 
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 12%));
-    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.2);
-    
-    --sidebar-background: 0 0% 12%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 211 80% 38%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 211 80% 38%;
-  }
+  --gradient-section: linear-gradient(
+    180deg,
+    hsl(222 47% 6%),
+    hsl(222 47% 10%)
+  );
+
+  /* Sombras profesionales */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-strong: 0 20px 65px rgba(0, 0, 0, 0.65);
+
+  /* Sidebar */
+  --sidebar-background: 222 47% 7%;
+  --sidebar-foreground: 215 20% 92%;
+  --sidebar-primary: 188 85% 45%;
+  --sidebar-primary-foreground: 0 0% 96%;
+  --sidebar-accent: 222 25% 14%;
+  --sidebar-accent-foreground: 215 20% 92%;
+  --sidebar-border: 222 25% 18%;
+  --sidebar-ring: 188 85% 45%;
+}
+
 }
 
 @layer base {

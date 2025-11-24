@@ -21,7 +21,7 @@ const Testimonials = () => {
               automatización de WhatsApp implementada por FalcoDevs"
             </blockquote>
             <div className="border-t border-border pt-6">
-              <p className="font-semibold text-lg">— Café Premium</p>
+              <p className="font-semibold text-lg"></p>
             </div>
           </div>
         </div>
