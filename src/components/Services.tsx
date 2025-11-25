@@ -8,17 +8,26 @@ const services = [
     description:
       "Sucursal virtual rápida y personalizada, ideal para potenciar tu presencia en la web.",
     href: "https://landingexpressfd.vercel.app/",
-    cta: "Ver LandingExpress",
-    badgeLogo: "/public/logoLE_transparent.png",
+    cta: "Sucursal Virtual",
+    badgeLogo: "/logoLE_transparent.png",
   },
   {
     id: "agents",
-    title: "Automatización Inteligente",
+    title: "Digital Agents",
     description:
       "Automatización inteligente y agentes digitales que liberan tiempo, reducen tareas repetitivas y elevan la eficiencia de tu equipo.",
     href: "https://falco-digital-agent.vercel.app/",
     cta: "Ver Automatización Inteligente",
-    badgeLogo: "/public/logoFDA_transparent.png",
+    badgeLogo: "/logoFDA_transparent.png",
+  },
+  {
+    id: "zeromerma",
+    title: "ZeroMerma",
+    description:
+      "Automatización y monitoreo para procesos industriales de recursos naturales, con foco en reducir mermas y optimizar tu producción.",
+    href: "#contacto", // más adelante puedes apuntar a una landing propia
+    cta: "Quiero saber más",
+    badgeLogo: "/logoZM_transparent.png", // 👈 asegúrate de que este archivo exista en /public
   },
 ];
 
@@ -50,7 +59,6 @@ const Services = () => {
                       src={service.badgeLogo}
                       alt={service.title}
                       className="h-40 w-40 object-contain rounded-full"
-                      
                     />
                   </div>
                 )}
@@ -60,10 +68,7 @@ const Services = () => {
                 {service.description}
               </p>
 
-              <Button
-                asChild
-                className="w-full md:w-auto px-6"
-              >
+              <Button asChild className="w-full md:w-auto px-6">
                 <a href={service.href} target="_blank" rel="noopener noreferrer">
                   {service.cta}
                 </a>

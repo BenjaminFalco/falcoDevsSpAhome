@@ -1,5 +1,5 @@
 const falcodevsLogo =
-  "/public/logoHome.png";
+  "/src/assets/logoHome.png";
 
 const Footer = () => {
   return (
