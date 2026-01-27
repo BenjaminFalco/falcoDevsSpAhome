@@ -22,7 +22,7 @@ const services = [
   },
   {
     id: "flow-monitor",
-    title: "flow-monitor",
+    title: "Flow Monitor",
     description:
       "Plataforma avanzada de monitoreo y control industrial en tiempo real. Optimiza procesos, reduce mermas y toma decisiones basadas en datos precisos.",
     href: "https://flowmonitor-falcodevs.vercel.app/",
