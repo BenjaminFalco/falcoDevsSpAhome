@@ -6,28 +6,28 @@ const services = [
     id: "landing",
     title: "LandingExpress",
     description:
-      "Sucursal virtual rápida y personalizada, ideal para potenciar tu presencia en la web.",
+      "Tu sucursal digital de alto impacto. Diseñamos experiencias web veloces y conversivas que posicionan tu marca en lo más alto del mercado.",
     href: "https://landingexpressfd.vercel.app/",
-    cta: "Sucursal Virtual",
+    cta: "Lanza tu sucursal hoy",
     badgeLogo: "/logoLE_transparent.png",
   },
   {
     id: "agents",
     title: "Digital Agents",
     description:
-      "Automatización inteligente y agentes digitales que liberan tiempo, reducen tareas repetitivas y elevan la eficiencia de tu equipo.",
+      "La nueva fuerza laboral de tu empresa. Implementamos agentes autónomos con IA que ejecutan tareas complejas las 24/7 sin errores.",
     href: "https://falco-digital-agent.vercel.app/",
-    cta: "Ver Automatización Inteligente",
+    cta: "Descubre el futuro",
     badgeLogo: "/logoFDA_transparent.png",
   },
   {
-    id: "zeromerma",
-    title: "ZeroMerma",
+    id: "flow-monitor",
+    title: "flow-monitor",
     description:
-      "Automatización y monitoreo para procesos industriales de recursos naturales, con foco en reducir mermas y optimizar tu producción.",
-    href: "#contacto", // más adelante puedes apuntar a una landing propia
-    cta: "Quiero saber más",
-    badgeLogo: "/logoZM_transparent.png", // 👈 asegúrate de que este archivo exista en /public
+      "Plataforma avanzada de monitoreo y control industrial en tiempo real. Optimiza procesos, reduce mermas y toma decisiones basadas en datos precisos.",
+    href: "https://flowmonitor-falcodevs.vercel.app/",
+    cta: "Optimiza tu producción",
+    badgeLogo: "/fm-logo-grande.png",
   },
 ];
 
@@ -44,31 +44,33 @@ const Services = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-nowrap md:grid md:grid-cols-3 gap-6 overflow-x-auto pb-8 md:pb-0 md:overflow-visible no-scrollbar">
           {services.map((service) => (
             <div
               key={service.id}
-              className="relative rounded-2xl border border-border bg-card/70 p-8 shadow-soft hover:shadow-strong transition-shadow"
+              className="relative min-w-[85vw] sm:min-w-[45vw] md:min-w-0 rounded-2xl border border-border bg-card/70 p-8 shadow-soft hover:shadow-strong transition-all hover:-translate-y-1 flex flex-col justify-between"
             >
-              {/* Header: título + sello chiquito */}
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-semibold">{service.title}</h3>
-                {service.badgeLogo && (
-                  <div className="shrink-0">
-                    <img
-                      src={service.badgeLogo}
-                      alt={service.title}
-                      className="h-40 w-40 object-contain rounded-full"
-                    />
-                  </div>
-                )}
+              <div>
+                {/* Header: título + sello chiquito */}
+                <div className="flex items-start justify-between mb-4 gap-4">
+                  <h3 className="text-xl md:text-2xl font-bold leading-tight">{service.title}</h3>
+                  {service.badgeLogo && (
+                    <div className="shrink-0">
+                      <img
+                        src={service.badgeLogo}
+                        alt={service.title}
+                        className="h-16 w-16 md:h-20 md:w-20 object-contain rounded-full bg-background/50 p-2 shadow-sm"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <p className="text-muted-foreground mb-8 leading-relaxed text-sm md:text-base">
+                  {service.description}
+                </p>
               </div>
 
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                {service.description}
-              </p>
-
-              <Button asChild className="w-full md:w-auto px-6">
+              <Button asChild className="w-full px-6 mt-auto">
                 <a href={service.href} target="_blank" rel="noopener noreferrer">
                   {service.cta}
                 </a>

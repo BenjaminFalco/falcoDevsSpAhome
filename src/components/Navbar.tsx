@@ -62,6 +62,13 @@ const Navbar = () => {
             </button>
 
             <button
+              onClick={() => scrollToSection("nosotros")}
+              className="relative text-foreground transition-colors hover:text-primary"
+            >
+              Nosotros
+            </button>
+
+            <button
               onClick={() => scrollToSection("contacto")}
               className="relative text-foreground transition-colors hover:text-primary"
             >
@@ -128,6 +135,13 @@ const Navbar = () => {
               className="block w-full text-left rounded-lg border border-border bg-card px-4 py-3 text-foreground shadow-soft hover:border-primary/50 hover:shadow-strong"
             >
               Servicios
+            </button>
+
+            <button
+              onClick={() => scrollToSection("nosotros")}
+              className="block w-full text-left rounded-lg border border-border bg-card px-4 py-3 text-foreground shadow-soft hover:border-primary/50 hover:shadow-strong"
+            >
+              Nosotros
             </button>
 
             <button

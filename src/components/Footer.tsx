@@ -28,6 +28,7 @@ const Footer = () => {
             <p>
               Desarrollamos y automatizamos tu negocio con IA y software a medida.
             </p>
+            <p>falcodevsspa@gmail.com | +56 9 2744 4800</p>
             <p>© {new Date().getFullYear()} FalcoDevs. Todos los derechos reservados.</p>
           </div>
         </div>
