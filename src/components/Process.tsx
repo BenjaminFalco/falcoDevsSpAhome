@@ -1,63 +1,61 @@
-import { MessageSquare, FileText, Code2, Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
-    number: "1",
-    icon: MessageSquare,
-    title: "Consulta Inicial",
-    description: "Analizamos tus necesidades y objetivos",
+    step: "01",
+    title: "Diagnóstico",
+    desc: "Sesión técnica para detectar cuellos de botella y fricciones.",
+    duration: "20 min"
   },
   {
-    number: "2",
-    icon: FileText,
-    title: "Propuesta",
-    description: "Diseñamos la solución perfecta para ti",
+    step: "02",
+    title: "Piloto (Aceleración)",
+    desc: "Implementamos una solución crítica en tiempo récord para validar impacto.",
+    duration: "7-14 días"
   },
   {
-    number: "3",
-    icon: Code2,
-    title: "Desarrollo",
-    description: "Construimos tu proyecto con las mejores prácticas",
-  },
-  {
-    number: "4",
-    icon: Rocket,
-    title: "Entrega y Soporte",
-    description: "Lanzamos y te acompañamos en el proceso",
-  },
+    step: "03",
+    title: "Escalamiento",
+    desc: "Despliegue total del sistema y optimización continua de caja.",
+    duration: "Continuo"
+  }
 ];
 
 const Process = () => {
   return (
-    <section id="proceso" className="py-20 bg-background">
+    <section className="py-24 bg-background border-t border-border">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Nuestro Proceso
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Simplificamos el desarrollo en 4 pasos
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-3xl md:text-5xl font-bold">Metodología de Alto Rendimiento</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Pasamos de la idea a la ejecución sin burocracia, priorizando el retorno de inversión.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="bg-card p-6 rounded-lg shadow-soft hover:shadow-strong transition-all duration-300 border border-border text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-4xl font-bold text-primary mb-2">
-                  {step.number}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+          {steps.map((item, i) => (
+            <div key={i} className="relative group">
+              <div className="text-6xl font-black text-primary/10 absolute -top-10 -left-6 group-hover:text-primary/20 transition-colors">
+                {item.step}
               </div>
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-8 h-0.5 bg-border" />
-              )}
+              <div className="relative space-y-4">
+                <h3 className="text-2xl font-bold">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-4">
+                  "{item.desc}"
+                </p>
+                <div className="inline-block bg-secondary px-3 py-1 rounded-full text-xs font-bold text-secondary-foreground">
+                  Tiempo: {item.duration}
+                </div>
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-20 text-center">
+          <Button asChild size="lg" className="rounded-full px-12">
+            <Link to="/diagnostico">Empezar con el Paso 1</Link>
+          </Button>
         </div>
       </div>
     </section>
